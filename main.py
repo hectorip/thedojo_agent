@@ -1,12 +1,33 @@
+import glob
 from langchain.document_loaders import TextLoader
 from langchain.indexes import VectorstoreIndexCreator
 
-loader = TextLoader("./docs/_posts/2023-04-07-cuando-separar-el-codigo.md")
-index = VectorstoreIndexCreator().from_loaders([loader])
+# from langchain.vectorstores import Pinecone
+# import pinecone
 
+# load all files from docs/_posts
 
-query = "¿Cuándo separar el código?"
-print(index.query(query))
+all_files = glob.glob("./docs/_posts/*.md")
 
-query = "¿Qué es un módulo?"
-print(index.query_with_sources(query))
+loaders = []
+
+# pinecone.init(
+#     api_key=os.getenv("PINECONE_API_KEY"),  # find at app.pinecone.io
+#     environment="asia-southeast1-gcp",
+# )
+
+for f in all_files:
+    print("Loading file: ", f)
+    loader = TextLoader(f)
+    loaders.append(loader)
+
+index = VectorstoreIndexCreator(
+    # vectorstore_cls=Pinecone,
+    # vectorstore_kwargs={"index_name": "thedojo-agent"},
+).from_loaders(loaders)
+
+while True:
+    query = input("Pregúntale a The Dojo MX: ")
+    if not query:
+        break
+    print(index.query_with_sources(query))
