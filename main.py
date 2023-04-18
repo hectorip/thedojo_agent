@@ -2,8 +2,9 @@ import glob
 from langchain.document_loaders import TextLoader
 from langchain.indexes import VectorstoreIndexCreator
 
-# from langchain.vectorstores import Pinecone
-# import pinecone
+from langchain.vectorstores import Pinecone
+import pinecone
+import os
 
 # load all files from docs/_posts
 
@@ -11,10 +12,10 @@ all_files = glob.glob("./docs/_posts/*.md")
 
 loaders = []
 
-# pinecone.init(
-#     api_key=os.getenv("PINECONE_API_KEY"),  # find at app.pinecone.io
-#     environment="asia-southeast1-gcp",
-# )
+pinecone.init(
+    api_key=os.getenv("PINECONE_API_KEY"),  # find at app.pinecone.io
+    environment="asia-southeast1-gcp",
+)
 
 for f in all_files:
     print("Loading file: ", f)
@@ -22,8 +23,8 @@ for f in all_files:
     loaders.append(loader)
 
 index = VectorstoreIndexCreator(
-    # vectorstore_cls=Pinecone,
-    # vectorstore_kwargs={"index_name": "thedojo-agent"},
+    vectorstore_cls=Pinecone,
+    vectorstore_kwargs={"index_name": "thedojo-agent"},
 ).from_loaders(loaders)
 
 while True:
