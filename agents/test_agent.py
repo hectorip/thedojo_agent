@@ -19,7 +19,7 @@ agent = initialize_agent(
 print("Este agente puede buscar en Google y hacer aritmética básica.")
 
 while True:
-    query = input("Pregunta algo: ")
+    query = input("Consulta: ")
     if not query:
         break
     print(agent.run(query))
