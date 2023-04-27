@@ -7,7 +7,9 @@ from langchain.llms import OpenAI
 
 llm = OpenAI(temperature=0)
 
-tools = load_tools(["serpapi", "llm-math", "whatnot", "myowntool"], llm=llm)
+tools = load_tools(["serpapi", "llm-math"], llm=llm)
+
+# Another types of agents
 
 agent = initialize_agent(
     tools,
@@ -15,8 +17,6 @@ agent = initialize_agent(
     agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION,
     verbose=True,
 )
-
-print("something more")
 
 while True:
     query = input("Consulta: ")
