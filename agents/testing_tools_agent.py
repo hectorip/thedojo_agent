@@ -9,7 +9,7 @@ llm = OpenAI(temperature=0)
 
 tools = load_tools(["serpapi", "llm-math"], llm=llm)
 
-# Another types of agents
+# Usar otros tipos de agentes
 
 agent = initialize_agent(
     tools,

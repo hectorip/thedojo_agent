@@ -32,11 +32,25 @@ Algo que probablemente ya conoces son los **prompts**: los textos que les pasas 
 
 ### LangChain
 
+LangChain es un proyecto que provee de un conjunto de herramientas para
+fortalecer las capacidades de los LLM's. Estas herramientas son (entre otras):
+
+- Cargadores y divisores de texto
+- Índices
+- Abstracciones sobre modelos (una interfaz de programación para conectarte a distintos modelos)
+
 ### Componentes
+
+Toda aplicación de software bien estructurada está hecha por componentes que
+pueden ser reutilizados, o que están siendo reutilizados ya.
 
 ### Índices
 
+Los índices son una forma de almacenar información de forma que sea fácil de consultar después.
+
 ### Agentes
+
+Actuar dirigidos po la
 
 ### Bases de datos vectoriales
 
