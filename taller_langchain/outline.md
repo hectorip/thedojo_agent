@@ -14,9 +14,9 @@ LLM son las siglas de **"Gran Modelo de Lenguaje"**, lo que quiere decir que es 
 
 ### Embeddings (Incorporaciones)
 
-Algo que vas a escuchar muy seguido en este entorno es la palabra "embeddings" (algunos lo traducen como "incorporaciones"). Para saber qué son y por qué existen, hay que saber un poco de cómo funcionan internamente los LLM's con arquitectura de transformador.
+Algo que vas a escuchar muy seguido en este entorno es la palabra "embeddings" (algunos lo traducen como "incorporaciones").
 
-La forma que tienen los _embeddings_ es un conjunto de vectores con valores de coma flotante. Estos vectores tienen una longitud fija y cada uno de ellos representa una palabra.
+La forma que tienen los _embeddings_ es un conjunto de vectores con valores de coma flotante. Estos vectores tienen una longitud fija y cada uno de ellos representa un texto.
 
 Se llaman incorporaciones porque son una forma de "incorporar" el texto en un espacio vectorial. Esto quiere decir que cada vector representa un texto en un espacio vectorial.
 
